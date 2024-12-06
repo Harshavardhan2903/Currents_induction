@@ -1,0 +1,157 @@
+/* General Styles */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden;
+    background: #000;
+    color: #fff;
+    position: relative;
+}
+
+/* Large Lightning Strike on Page Load */
+.lightning-strike {
+    position: absolute;
+    top: 0;
+    left: 50%;
+    width: 4px;
+    height: 100vh;
+    background: white;
+    opacity: 0;
+    z-index: 5;
+    transform: translateX(-50%);
+    animation: strike-animation 2s ease-in-out forwards;
+}
+
+@keyframes strike-animation {
+    0% { opacity: 0; }
+    10% { opacity: 1; }
+    20% { opacity: 0; }
+    100% { opacity: 0; }
+}
+
+/* Background Lightning Animation */
+.lightning-container {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    pointer-events: none;
+    z-index: 1;
+}
+
+.lightning {
+    position: absolute;
+    top: -150%;
+    left: 0;
+    width: 2px;
+    height: 250%;
+    background: linear-gradient(white, transparent);
+    opacity: 0;
+    animation: background-lightning-animation 3s infinite ease-in-out;
+}
+
+.lightning:nth-child(2) {
+    left: 25%;
+    animation-delay: 1s;
+}
+
+.lightning:nth-child(3) {
+    left: 75%;
+    animation-delay: 1.5s;
+}
+
+@keyframes background-lightning-animation {
+    0%, 97% {
+        opacity: 0;
+    }
+    98% {
+        opacity: 1;
+    }
+    99% {
+        opacity: 0;
+    }
+}
+
+/* Header Section */
+header {
+    text-align: center;
+    padding: 100px 20px;
+    position: relative;
+    z-index: 2;
+    background: rgba(0, 0, 0, 0.8);
+}
+
+header h1 {
+    font-size: 3em;
+    margin-bottom: 10px;
+    color: #FFD700;
+}
+
+header p {
+    font-size: 1.5em;
+    margin-bottom: 20px;
+    color: #ccc;
+}
+
+header .cta {
+    display: inline-block;
+    padding: 10px 20px;
+    background: #FFD700;
+    color: #000;
+    text-decoration: none;
+    border-radius: 5px;
+    font-weight: bold;
+    transition: background 0.3s;
+}
+
+header .cta:hover {
+    background: #FFA500;
+}
+
+/* Events Section */
+#events {
+    padding: 50px 20px;
+    text-align: center;
+    background: #111;
+}
+
+#events h2 {
+    font-size: 2.5em;
+    margin-bottom: 20px;
+    color: #FFD700;
+}
+
+.event-links {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+.event-btn {
+    padding: 15px 30px;
+    background: #FFD700;
+    color: #000;
+    text-decoration: none;
+    border-radius: 5px;
+    font-size: 1.2em;
+    font-weight: bold;
+    transition: background 0.3s;
+}
+
+.event-btn:hover {
+    background: #FFA500;
+}
+
+/* Footer */
+footer {
+    text-align: center;
+    padding: 20px;
+    background: #222;
+    color: #ccc;
+    position: relative;
+    z-index: 2;
+}
